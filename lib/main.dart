@@ -1,4 +1,4 @@
-import 'package:blood_donation_app/view/screen/splash_screen/splash_screen.dart';
+import 'package:blood_donation_app/core/app_routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: SplashScreen(),
+          initialRoute: AppRoute.splashScreen,
+          getPages: AppRoute.routes,
         );
       },
     );

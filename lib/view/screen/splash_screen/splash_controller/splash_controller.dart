@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:blood_donation_app/view/screen/auth_screen/choice_type_screen/choice_type_screen.dart';
+import 'package:blood_donation_app/core/app_routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxService {
@@ -17,7 +16,7 @@ class SplashController extends GetxService {
     });
 
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(ChoiceTypeScreen());
+      Get.toNamed(AppRoute.choiceUserType);
     });
   }
 

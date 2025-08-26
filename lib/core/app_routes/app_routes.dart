@@ -1,0 +1,25 @@
+import 'package:blood_donation_app/view/screen/auth_screen/choice_type_screen/choice_type_screen.dart';
+import 'package:blood_donation_app/view/screen/auth_screen/login_screen/login_screen.dart';
+import 'package:blood_donation_app/view/screen/splash_screen/splash_screen.dart';
+import 'package:get/get.dart';
+
+class AppRoute {
+  //<========== Initial  Screen ==========>
+
+  static const String splashScreen = "/splashScreen";
+
+  //<========== Authentication Screens ==========>
+  static const String choiceUserType = "/choiceUserType";
+  static const String loginScreen = "/loginScreen";
+
+  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<=====================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  static List<GetPage> routes = [
+    //<========== Initial  Screen ==========>
+    GetPage(name: splashScreen, page: () => SplashScreen()),
+
+    //<========== Authentication Screens ==========>
+    GetPage(name: choiceUserType, page: () => ChoiceTypeScreen()),
+    GetPage(name: loginScreen, page: () => LoginScreen()),
+  ];
+}
