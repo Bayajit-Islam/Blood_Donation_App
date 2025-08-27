@@ -21,4 +21,20 @@ class AppString {
   static const String login = "Login";
   static const String dontHaveAccount = "Don’t have an account?";
   static const String signUp = "Sign up";
+
+  //<========== SignUp Screen ==========>
+  static const String createAnAccount = "Create an account";
+  static const String signUpSubTitle =
+      "Create your account and fill in the form below to get started";
+  static const String fullName = "Full name";
+  static const String typeNmbandEmail = "Type Number/Email";
+  static const String allreadyHaveAccount = "Already have an account?";
+
+  //<========== Verification Screen ==========>
+  static const String verificationCode = "Verification Code";
+  static const String subTitleVerificaton =
+      "Please enter verification code, we sent it to your Number : +880134565234543 ";
+  static const String resendCodeinTimer = "Resend code in 04:30";
+  static const String didYouGetCode = "Did you don’t get code?";
+  static const String resnedCode = "Resend Code";
 }

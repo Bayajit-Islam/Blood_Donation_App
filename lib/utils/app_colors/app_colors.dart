@@ -7,4 +7,5 @@ class AppColors {
   static const Color background = Color(0XFFF9F9F9);
   static const Color typ2Colors = Color(0xFF687893);
   static const Color cardColor = Color.fromARGB(54, 217, 217, 217);
+  static const Color formText = Color(0xFFD9D9D9);
 }

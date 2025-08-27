@@ -7,8 +7,11 @@ import 'package:blood_donation_app/view/widget/customer_button/customer_button.d
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  SignupScreen({super.key});
+
+  //<==========  FullName  Controller  ==========>
+  final TextEditingController fullNameController = TextEditingController();
 
   //<==========  Email  Controller  ==========>
   final TextEditingController emailController = TextEditingController();
@@ -28,7 +31,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             //<========== Title  ==========>
             CustomeText(
-              text: AppString.wellcomeBloodCare,
+              text: AppString.createAnAccount,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
@@ -36,13 +39,30 @@ class LoginScreen extends StatelessWidget {
             //<========== Sub Title  ==========>
             SizedBox(height: 16),
             CustomeText(
-              text: AppString.loginSubTitle,
+              text: AppString.signUpSubTitle,
+              textAlign: TextAlign.start,
+              maxLines: 2,
               fontSize: 13,
               fontWeight: FontWeight.w400,
             ),
 
+            //<========== FullName TextField  ==========>
+            SizedBox(height: 16),
+            CustomeText(
+              text: AppString.fullName,
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
+
+            //<==========  TextField  ==========>
+            SizedBox(height: 16),
+            CustomeTextfield(
+              controller: fullNameController,
+              hintext: AppString.fullName,
+            ),
+
             //<========== Email And Mobile Number TextField  ==========>
-            SizedBox(height: 27),
+            SizedBox(height: 16),
             CustomeText(
               text: AppString.emailAndPhone,
               fontSize: 16,
@@ -53,7 +73,7 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 16),
             CustomeTextfield(
               controller: emailController,
-              hintext: AppString.exampleMail,
+              hintext: AppString.typeNmbandEmail,
             ),
 
             //<========== Password TextField  ==========>
@@ -71,57 +91,38 @@ class LoginScreen extends StatelessWidget {
               hintext: AppString.password,
             ),
 
-            //<==========  Forgot Password  ==========>
-            SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                InkWell(
-                  onTap: () {
-                    //<==========  Route Here  ==========>
-                  },
-                  child: CustomeText(
-                    text: AppString.forgotPassword,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.brand,
-                  ),
-                ),
-              ],
-            ),
-
-            //<==========  lOGIN Button  ==========>
+            //<==========  SignUp Button  ==========>
             SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 21.5),
               child: CustomerButton(
-                buttonText: AppString.login,
+                buttonText: AppString.signUp,
                 onTap: () {
                   //<==========  Route Here  ==========>
                 },
               ),
             ),
 
-            //<==========  Don’t have an account?SignUp  ==========>
+            //<==========  Already have an account?Login  ==========>
             SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //<==========  Don’t have an account? ==========>
+                //<==========  Already have an account? ==========>
                 CustomeText(
-                  text: AppString.dontHaveAccount,
+                  text: AppString.allreadyHaveAccount,
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
                 ),
 
-                //<==========  SignUp  ==========>
+                //<==========  Login  ==========>
                 InkWell(
                   onTap: () {
                     //<==========  Route Here  ==========>
-                    Get.toNamed(AppRoute.signUpScreen);
+                    Get.toNamed(AppRoute.loginScreen);
                   },
                   child: CustomeText(
-                    text: AppString.signUp,
+                    text: AppString.login,
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
                     color: AppColors.brand,
