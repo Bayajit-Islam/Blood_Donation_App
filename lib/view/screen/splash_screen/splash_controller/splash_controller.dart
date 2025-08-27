@@ -1,10 +1,15 @@
+// ignore_for_file: await_only_futures
+
 import 'dart:async';
 import 'package:blood_donation_app/core/app_routes/app_routes.dart';
+import 'package:blood_donation_app/utils/api/local_storage.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxService {
   Timer? timer;
   var opacity = 0.0.obs;
+
+  final LocalStorage _localStorage = Get.put(LocalStorage());
 
   @override
   void onInit() {
@@ -15,8 +20,14 @@ class SplashController extends GetxService {
       }
     });
 
-    Future.delayed(Duration(seconds: 3), () {
-      Get.toNamed(AppRoute.choiceUserType);
+    Future.delayed(Duration(seconds: 3), () async {
+      String? accessToken = await _localStorage.read("accessToken");
+
+      if (accessToken != null && accessToken.isNotEmpty) {
+        Get.offAllNamed(AppRoute.signUpScreen);
+      } else {
+        Get.toNamed(AppRoute.choiceUserType);
+      }
     });
   }
 

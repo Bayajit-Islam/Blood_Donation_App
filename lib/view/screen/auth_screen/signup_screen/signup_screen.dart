@@ -1,6 +1,7 @@
 import 'package:blood_donation_app/core/app_routes/app_routes.dart';
 import 'package:blood_donation_app/utils/app_colors/app_colors.dart';
 import 'package:blood_donation_app/utils/static_string/app_string.dart';
+import 'package:blood_donation_app/view/screen/auth_screen/signup_screen/signup_controller.dart/signup_controller.dart';
 import 'package:blood_donation_app/view/widget/custome_text/customer_text.dart';
 import 'package:blood_donation_app/view/widget/custome_textfield/custome_textfield.dart';
 import 'package:blood_donation_app/view/widget/customer_button/customer_button.dart';
@@ -9,6 +10,9 @@ import 'package:get/get.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
+
+  //<==========  Inject SignupController  ==========>
+  final SignupController _signupController = Get.put(SignupController());
 
   //<==========  FullName  Controller  ==========>
   final TextEditingController fullNameController = TextEditingController();
@@ -95,12 +99,45 @@ class SignupScreen extends StatelessWidget {
             SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 21.5),
-              child: CustomerButton(
-                buttonText: AppString.signUp,
-                onTap: () {
-                  //<==========  Route Here  ==========>
-                },
-              ),
+              child: Obx(() {
+                return _signupController.isLoading.value == true
+                    ? Center(child: CircularProgressIndicator())
+                    : CustomerButton(
+                        buttonText: AppString.signUp,
+                        onTap: () {
+                          //<==========  Route Here  ==========>
+                          if (fullNameController.text.isNotEmpty &&
+                              emailController.text.isNotEmpty &&
+                              passwerdController.text.isNotEmpty) {
+                            //<==========  Next Stem  ==========>
+                            if (passwerdController.text.length >= 8) {
+                              //<==========  Call SignUp Method  ==========>
+                              _signupController.signUp(
+                                name: fullNameController.text,
+                                email: emailController.text.toLowerCase(),
+                                password: passwerdController.text,
+                              );
+                            } else {
+                              //<==========  Password Week  Warning  ==========>
+                              Get.snackbar(
+                                backgroundColor: AppColors.brand,
+                                "Password week",
+                                "Password Atleas 8 Character",
+                                colorText: AppColors.primaryText,
+                              );
+                            }
+                          } else {
+                            //<==========  Fill All Requerd  Form  ==========>
+                            Get.snackbar(
+                              backgroundColor: AppColors.brand,
+                              "Warning",
+                              "Please Fill All ",
+                              colorText: AppColors.primaryText,
+                            );
+                          }
+                        },
+                      );
+              }),
             ),
 
             //<==========  Already have an account?Login  ==========>

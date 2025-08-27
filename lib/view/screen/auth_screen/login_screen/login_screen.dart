@@ -1,6 +1,7 @@
 import 'package:blood_donation_app/core/app_routes/app_routes.dart';
 import 'package:blood_donation_app/utils/app_colors/app_colors.dart';
 import 'package:blood_donation_app/utils/static_string/app_string.dart';
+import 'package:blood_donation_app/view/screen/auth_screen/login_screen/login_controller/login_controller.dart';
 import 'package:blood_donation_app/view/widget/custome_text/customer_text.dart';
 import 'package:blood_donation_app/view/widget/custome_textfield/custome_textfield.dart';
 import 'package:blood_donation_app/view/widget/customer_button/customer_button.dart';
@@ -15,6 +16,9 @@ class LoginScreen extends StatelessWidget {
 
   //<==========  Password  Controller  ==========>
   final TextEditingController passwerdController = TextEditingController();
+
+  //<==========  Login  Controller  ==========>
+  final LoginController _loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -94,12 +98,30 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 21.5),
-              child: CustomerButton(
-                buttonText: AppString.login,
-                onTap: () {
-                  //<==========  Route Here  ==========>
-                },
-              ),
+              child: Obx(() {
+                return _loginController.isloading.value == true
+                    ? Center(child: CircularProgressIndicator())
+                    : CustomerButton(
+                        buttonText: AppString.login,
+                        onTap: () {
+                          //<==========  Route Here  ==========>
+                          if (emailController.text.isNotEmpty &&
+                              passwerdController.text.isNotEmpty) {
+                            _loginController.login(
+                              email: emailController.text.toLowerCase(),
+                              password: passwerdController.text,
+                            );
+                          } else {
+                            Get.snackbar(
+                              backgroundColor: AppColors.brand,
+                              "Please Fill Email And Password",
+                              "",
+                              colorText: AppColors.primaryText,
+                            );
+                          }
+                        },
+                      );
+              }),
             ),
 
             //<==========  Don’t have an account?SignUp  ==========>
