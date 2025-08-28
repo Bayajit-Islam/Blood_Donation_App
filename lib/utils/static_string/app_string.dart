@@ -37,4 +37,12 @@ class AppString {
   static const String resendCodeinTimer = "Resend code in 04:30";
   static const String didYouGetCode = "Did you don’t get code?";
   static const String resnedCode = "Resend Code";
+
+  //<========== Home Screen ==========>
+  static const String saveliveGiveBlood = "Save a life\ngive blood";
+  static const String findDonors = "Find Donors";
+  static const String donateNow = "Donate Now";
+  static const String request = "Request";
+  static const String recentDonors = "Recent Donors";
+  static  const String viewAll = "View all";
 }

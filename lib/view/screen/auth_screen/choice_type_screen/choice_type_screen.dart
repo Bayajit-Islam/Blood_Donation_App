@@ -41,7 +41,7 @@ class ChoiceTypeScreen extends StatelessWidget {
               //<========== Donor Button ==========>
               SizedBox(height: 19),
               CustomerButton(
-                buttonText: AppString.healthWorker,
+                buttonText: AppString.donor,
                 textColor: AppColors.whiteButtonText,
                 bgColor: AppColors.brand,
                 onTap: () {

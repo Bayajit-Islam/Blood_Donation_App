@@ -24,7 +24,7 @@ class SplashController extends GetxService {
       String? accessToken = await _localStorage.read("accessToken");
 
       if (accessToken != null && accessToken.isNotEmpty) {
-        Get.offAllNamed(AppRoute.signUpScreen);
+        Get.offAllNamed(AppRoute.homeScreen);
       } else {
         Get.toNamed(AppRoute.choiceUserType);
       }

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:blood_donation_app/core/app_routes/app_routes.dart';
 import 'package:blood_donation_app/utils/api/app_url.dart';
 import 'package:blood_donation_app/utils/api/base_url.dart';
 import 'package:blood_donation_app/utils/api/local_storage.dart';
@@ -41,14 +42,17 @@ class LoginController extends GetxService {
             body["message"] == "Logged in successfully") {
           //<==========  get accessToken value  ==========>
           String accessToken = body["data"]["accessToken"];
-          
+
           //<========== Store AceesToken  ==========>
 
           final LocalStorage localStorage = Get.put(LocalStorage());
-          localStorage.write("accessToken",accessToken);
+          localStorage.write("accessToken", accessToken);
 
           message = body["message"];
           subMessage = "WellCome Back";
+
+          //<==========  IF LOGIN SUCCESS ROUTE HOME PAGES  ==========>
+          Get.offAllNamed(AppRoute.homeScreen);
         }
         Get.snackbar(backgroundColor: AppColors.green, message, subMessage);
       } else {
