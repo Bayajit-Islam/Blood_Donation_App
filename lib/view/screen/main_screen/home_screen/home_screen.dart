@@ -1,3 +1,4 @@
+import 'package:blood_donation_app/core/app_routes/app_routes.dart';
 import 'package:blood_donation_app/utils/app_colors/app_colors.dart';
 import 'package:blood_donation_app/utils/app_image/app_image.dart';
 import 'package:blood_donation_app/utils/static_string/app_string.dart';
@@ -6,6 +7,7 @@ import 'package:blood_donation_app/view/widget/custome_text/customer_text.dart';
 import 'package:blood_donation_app/view/widget/donor_listtile/donor_listtile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: 66),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      
+
                       //<========== Profile Name Picture And Notification ==========>
                       child: Row(
                         children: [
@@ -111,7 +113,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
-      
+
                         Image.asset(AppImage.saveLifeGiveBlood),
                       ],
                     ),
@@ -128,16 +130,24 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CateGoryTile(
+                  onTap: () {
+                    Get.toNamed(AppRoute.findDonor);
+                  },
                   image: AppImage.findDonor,
                   name: AppString.findDonors,
                 ),
-      
+
                 CateGoryTile(
+                  onTap: () {},
                   image: AppImage.donateNoe,
                   name: AppString.donateNow,
                 ),
-      
-                CateGoryTile(image: AppImage.request, name: AppString.request),
+
+                CateGoryTile(
+                  onTap: () {},
+                  image: AppImage.request,
+                  name: AppString.request,
+                ),
               ],
             ),
           ),
@@ -153,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                 ),
-      
+
                 InkWell(
                   onTap: () {},
                   child: CustomeText(
@@ -165,8 +175,8 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          //liST View Builder Here
 
+          //liST View Builder Here
           Expanded(
             child: ListView.builder(
               itemCount: 10,

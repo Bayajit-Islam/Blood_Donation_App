@@ -44,5 +44,27 @@ class AppString {
   static const String donateNow = "Donate Now";
   static const String request = "Request";
   static const String recentDonors = "Recent Donors";
-  static  const String viewAll = "View all";
+  static const String viewAll = "View all";
+
+  //<========== Find Donors Screen ==========>
+  static const String bloodDonorsAroundYou = "Blood Donors Around You";
+  static const String selectDivision = "Select Division";
+  static const String selectBlood = "Select Blood";
+  static const String  dhaka= " Dhaka";
+  static const String  mymensingh= "Mymensingh";
+  static const String  chattogram = "Chattogram";
+  static const String  khulna = " Khulna";
+  static const String rajhshahi = " Rajshahi";
+  static const String rangpur= "Rangpur";
+  static const String sylhen= "Sylhet";
+  static const String barishal= " Barishal";
+
+  static const String aPositive= "(A+) A  positive";
+  static const String aNagative= "(A-) A  negative";
+  static const String  bPositive= "(B+) B  positive";
+  static const String bNagative= "(B-) B negative";
+  static const String abPositive= "(AB+) AB  positive";
+  static const String abNagative= "(AB-) AB  negative";
+  static const String oPositive= "(O+) O positive ";
+  static const String oNagative= "(O-) O  negative";
 }

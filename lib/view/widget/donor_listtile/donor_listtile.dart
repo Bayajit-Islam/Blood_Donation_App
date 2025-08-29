@@ -10,73 +10,90 @@ class DonorListtile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0,left: 16,right: 16),
+      padding: const EdgeInsets.only(bottom: 16.0, left: 16, right: 16),
       child: Container(
         width: double.infinity.w,
         height: 148.h,
-        decoration: BoxDecoration(
-          color: AppColors.secandaryColor
-        ),
+        decoration: BoxDecoration(color: AppColors.secandaryColor),
         child: Row(
           children: [
             //<========== Profile Picture Here ==========>
             CircleAvatar(
               radius: 30,
-              backgroundImage:AssetImage("assets/profilepicture.jpg")
+              backgroundImage: AssetImage("assets/profilepicture.jpg"),
             ),
             //<========== Profile Inforamation Here ==========>
-            SizedBox(width: 16,),
-      
+            SizedBox(width: 16),
+
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              
+
                 children: [
                   //<========== Name And Icon ==========>
                   Row(
                     children: [
-                      Icon(Icons.person,size: 24,),
-                      SizedBox(width: 8,),
-                      CustomeText(text: "Sadikul Islam",fontSize: 16,fontWeight: FontWeight.w600,)
+                      Icon(Icons.person, size: 24),
+                      SizedBox(width: 8),
+                      CustomeText(
+                        text: "Sadikul Islam",
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ],
                   ),
                   //<========== Divider ==========>
-                  SizedBox(height: 8,),
-                  
+                  SizedBox(height: 8),
+
                   Image.asset(AppImage.line),
-              
+
                   //<========== Location ==========>
-                  SizedBox(height: 8,),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset(AppImage.homePin),
-                      SizedBox(width: 8,),
-                      CustomeText(text: "Sherpur",fontSize: 13,fontWeight: FontWeight.w400,color: AppColors.typ2Colors,)
+                      SizedBox(width: 8),
+                      CustomeText(
+                        text: "Sherpur",
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.typ2Colors,
+                      ),
                     ],
                   ),
-              
+
                   //<========== Last Donate  ==========>
-                  SizedBox(height: 8,),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset(AppImage.bloodType),
-                      SizedBox(width: 8,),
-                      CustomeText(text: "Last Donate: 3 Month Ago",fontSize: 13,fontWeight: FontWeight.w400,color: AppColors.typ2Colors,)
+                      SizedBox(width: 8),
+                      CustomeText(
+                        text: "Last Donate: 3 Month Ago",
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.typ2Colors,
+                      ),
                     ],
                   ),
-              
+
                   //<========== Age ==========>
-                  SizedBox(height: 8,),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset(AppImage.accessibility),
-                      SizedBox(width: 8,),
-                      CustomeText(text: "28",fontSize: 13,fontWeight: FontWeight.w400,color: AppColors.typ2Colors,)
+                      SizedBox(width: 8),
+                      CustomeText(
+                        text: "Age: 28",
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.typ2Colors,
+                      ),
                     ],
                   ),
                 ],
@@ -93,7 +110,7 @@ class DonorListtile extends StatelessWidget {
                   Image.asset(AppImage.phoneInCall),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

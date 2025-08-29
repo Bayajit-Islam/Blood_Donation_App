@@ -1,6 +1,7 @@
 import 'package:blood_donation_app/view/screen/auth_screen/choice_type_screen/choice_type_screen.dart';
 import 'package:blood_donation_app/view/screen/auth_screen/login_screen/login_screen.dart';
 import 'package:blood_donation_app/view/screen/auth_screen/signup_screen/signup_screen.dart';
+import 'package:blood_donation_app/view/screen/main_screen/find_donor/find_donor.dart';
 import 'package:blood_donation_app/view/screen/main_screen/home_screen/home_screen.dart';
 import 'package:blood_donation_app/view/screen/splash_screen/splash_screen.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class AppRoute {
 
   //<========== Main Screens ==========>
   static const String homeScreen = "/homeScreen";
+  static const String findDonor = "/findDonor";
 
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<=====================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -30,6 +32,7 @@ class AppRoute {
     GetPage(name: signUpScreen, page: () => SignupScreen()),
 
     //<========== Main Screens ==========>
-    GetPage(name: homeScreen, page:()=> HomeScreen()),
+    GetPage(name: homeScreen, page: () => HomeScreen()),
+    GetPage(name: findDonor, page: () => FindDonor()),
   ];
 }
