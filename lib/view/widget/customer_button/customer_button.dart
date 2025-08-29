@@ -12,7 +12,7 @@ class CustomerButton extends StatelessWidget {
   const CustomerButton({
     super.key,
     required this.buttonText,
-    this.textColor = AppColors.whiteButtonText,
+    this.textColor = AppColors.secandaryColor,
     this.borderColor = AppColors.brand,
     this.bgColor = AppColors.brand,
     required this.onTap 

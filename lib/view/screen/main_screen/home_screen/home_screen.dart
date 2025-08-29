@@ -3,6 +3,7 @@ import 'package:blood_donation_app/utils/app_image/app_image.dart';
 import 'package:blood_donation_app/utils/static_string/app_string.dart';
 import 'package:blood_donation_app/view/screen/main_screen/home_screen/inner_widget/inner_widget.dart';
 import 'package:blood_donation_app/view/widget/custome_text/customer_text.dart';
+import 'package:blood_donation_app/view/widget/donor_listtile/donor_listtile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,7 +13,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           //<========== UserName And Save a Life  Give Blood ==========>
           Stack(
@@ -36,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: 66),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-
+      
                       //<========== Profile Name Picture And Notification ==========>
                       child: Row(
                         children: [
@@ -108,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
-
+      
                         Image.asset(AppImage.saveLifeGiveBlood),
                       ],
                     ),
@@ -128,12 +131,12 @@ class HomeScreen extends StatelessWidget {
                   image: AppImage.findDonor,
                   name: AppString.findDonors,
                 ),
-
+      
                 CateGoryTile(
                   image: AppImage.donateNoe,
                   name: AppString.donateNow,
                 ),
-
+      
                 CateGoryTile(image: AppImage.request, name: AppString.request),
               ],
             ),
@@ -150,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                 ),
-
+      
                 InkWell(
                   onTap: () {},
                   child: CustomeText(
@@ -162,8 +165,16 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 16),
           //liST View Builder Here
+
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return DonorListtile();
+              },
+            ),
+          ),
         ],
       ),
     );

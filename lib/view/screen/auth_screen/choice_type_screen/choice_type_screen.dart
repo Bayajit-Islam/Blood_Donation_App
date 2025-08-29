@@ -42,7 +42,7 @@ class ChoiceTypeScreen extends StatelessWidget {
               SizedBox(height: 19),
               CustomerButton(
                 buttonText: AppString.donor,
-                textColor: AppColors.whiteButtonText,
+                textColor: AppColors.secandaryColor,
                 bgColor: AppColors.brand,
                 onTap: () {
                   //<========== Route Here ==========>
