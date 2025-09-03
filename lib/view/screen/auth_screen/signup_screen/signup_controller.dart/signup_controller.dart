@@ -19,7 +19,7 @@ class SignupController extends GetxService {
 
     try {
       isLoading(true);
-      final response = await BaseClient.postRequest(
+      final response = await BaseUrl.postRequest(
         api: AppUrl.signUp,
         body: body,
       );

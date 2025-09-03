@@ -15,7 +15,7 @@ class LoginController extends GetxService {
 
     try {
       isloading(true);
-      final response = await BaseClient.postRequest(
+      final response = await BaseUrl.postRequest(
         api: AppUrl.logIn,
         body: body,
       );

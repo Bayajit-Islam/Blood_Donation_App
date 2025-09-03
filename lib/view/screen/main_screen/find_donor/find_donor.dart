@@ -26,7 +26,7 @@ class _FindDonorState extends State<FindDonor> {
   ];
 
   //current item
-  late String? currentDivisonItem = AppString.selectBlood;
+   String? currentDivisonItem = AppString.selectBlood;
 
   //lIST OF BLOOD
   final List<String> bloodList = [

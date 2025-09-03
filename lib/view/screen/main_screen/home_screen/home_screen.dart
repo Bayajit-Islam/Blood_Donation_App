@@ -3,6 +3,7 @@ import 'package:blood_donation_app/utils/app_colors/app_colors.dart';
 import 'package:blood_donation_app/utils/app_image/app_image.dart';
 import 'package:blood_donation_app/utils/static_string/app_string.dart';
 import 'package:blood_donation_app/view/screen/main_screen/home_screen/inner_widget/inner_widget.dart';
+import 'package:blood_donation_app/view/screen/profile_screen/profile_controller/profile_controller.dart';
 import 'package:blood_donation_app/view/widget/custome_text/customer_text.dart';
 import 'package:blood_donation_app/view/widget/donor_listtile/donor_listtile.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  //<========== Inject Profile Controller ==========>
+  final ProfileController profileController = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -52,22 +55,26 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 8),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomeText(
-                                text: "Sadikul Islam",
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.background,
-                              ),
-                              CustomeText(
-                                text: "Sherpur,Sadar",
-                                fontSize: 13,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.background,
-                              ),
-                            ],
+                          Obx(
+                            () => Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomeText(
+                                  text: profileController.isLoading.value
+                                      ? "Loading..."
+                                      : profileController.profile.value.name,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.background,
+                                ),
+                                CustomeText(
+                                  text: "Sherpur,Sadar",
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.background,
+                                ),
+                              ],
+                            ),
                           ),
                           Spacer(),
                           //<========== Notificaton ==========>

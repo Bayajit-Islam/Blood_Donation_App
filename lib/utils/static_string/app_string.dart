@@ -50,21 +50,21 @@ class AppString {
   static const String bloodDonorsAroundYou = "Blood Donors Around You";
   static const String selectDivision = "Select Division";
   static const String selectBlood = "Select Blood";
-  static const String  dhaka= " Dhaka";
+  static const String  dhaka= "Dhaka";
   static const String  mymensingh= "Mymensingh";
   static const String  chattogram = "Chattogram";
-  static const String  khulna = " Khulna";
-  static const String rajhshahi = " Rajshahi";
+  static const String  khulna = "Khulna";
+  static const String rajhshahi = "Rajshahi";
   static const String rangpur= "Rangpur";
   static const String sylhen= "Sylhet";
-  static const String barishal= " Barishal";
+  static const String barishal= "Barishal";
 
-  static const String aPositive= "(A+) A  positive";
-  static const String aNagative= "(A-) A  negative";
+  static const String aPositive= "(A+) A positive";
+  static const String aNagative= "(A-) A negative";
   static const String  bPositive= "(B+) B  positive";
   static const String bNagative= "(B-) B negative";
   static const String abPositive= "(AB+) AB  positive";
-  static const String abNagative= "(AB-) AB  negative";
-  static const String oPositive= "(O+) O positive ";
-  static const String oNagative= "(O-) O  negative";
+  static const String abNagative= "(AB-) AB negative";
+  static const String oPositive= "(O+) O positive";
+  static const String oNagative= "(O-) O negative";
 }
